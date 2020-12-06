@@ -7,11 +7,8 @@ V souboru `requirements.txt` jsou uloženy všechny knihovny potřebné ke spuš
 ## Spuštění
 Při spuštění aplikace `rsa_decrypt.py` se objeví menu:  
 1. Generate both keys by provided libraries Crypto and show all components including prime numbers
-
 2. Generate modulus n with smaller key size and actually decrypt n to two prime number factors p and q
-
 3. Show credits
-
 4. Exit program  
  
 Volba se provádí zapsáním hodnoty dané možnosti jako celého čísla (např: 2). Jelikož je knihovna Crypto schopna generovat pouze klíče o velikosti `1024b, 2048b a 3072b`, bylo by nereálné snažit se takto dlouhý klíč faktorizovat.  
