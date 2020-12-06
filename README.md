@@ -1,8 +1,3 @@
-<style>
-    .center {
-        text-align: center;
-    }
-</style>
 # Nástroj pro prolomení šifrované komunikace systému RSA
 
 ## Instalace
