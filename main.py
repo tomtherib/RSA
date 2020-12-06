@@ -2,10 +2,7 @@ import math
 import random
 import sys
 import time
-from Crypto.IO import PEM
-from datetime import datetime
 from Crypto.PublicKey import RSA
-from threading import Timer
 from random import randrange, getrandbits
 
 
@@ -58,14 +55,8 @@ def pollardRho(n):
         if (d == n): 
             return pollardRho(n)
 
-    return d     
+    return d
 
-def lcm(a, b):
-    return abs(a * b) // math.gcd(a, b)
-
-def decimalToBinary(n):  
-    return bin(n).replace("0b", "") 
-    
 def generate_RSA(bits):
     new_key = RSA.generate(bits, e=65537)
     public_key = new_key.publickey().exportKey("PEM") 
@@ -156,13 +147,24 @@ def generatePrivKey(p, q, e):
 
     return d
 
+def lcm(a, b):
+    return abs(a * b) // math.gcd(a, b)
+
+def decimalToBinary(n):  
+    return bin(n).replace("0b", "") 
+
 def chooseOption():
-    print("\n\n 1 - Generate both keys by provided libraries Crypto and show all components including prime numbers")
-    print("\n 2 - Generate modulus n with smaller key size and actually decrypt n to two prime number factors p and q")
+    print("\n\n 1 - Generate both keys by provided \
+libraries Crypto and show all components\n \
+including prime numbers")
+    print("\n 2 - Generate modulus n with smaller \
+key size and actually decrypt n to two\n \
+prime number factors p and q")
     print("\n 3 - Show credits")
     print("\n 4 - Exit program\n")
 
-    option = input(" -> Choose 1, 2, 3 or 4 and write as number: ")
+    option = input(" -> Choose 1, 2, 3 or 4 and \
+write as number: ")
 
     if option == "1":
         option1()
@@ -170,15 +172,19 @@ def chooseOption():
     elif option == "2":
         while True:
             try:
-                bits = int(input("\n -> Choose key length in bits (at least 16) and write as integer (128) or 1 to return: "))
+                bits = int(input("\n -> Choose key \
+ length in bits (at least 16) and write as integer"  
+" (128)\n   or 1 to return: "))
                 if(bits == 1):
                     chooseOption()
                 elif(bits >= 16):
                     break
                 else:
-                    print("\nThat was no valid integer greater then 16!")
+                    print("\nThat was no valid \
+integer greater then 16!")
             except ValueError:
-                print("\nThat was no valid integer greater then 16!")
+                print("\nThat was no valid integer \
+greater then 16!")
 
         option2(bits)
 
@@ -192,9 +198,11 @@ def chooseOption():
 
 def option1():
     print("\n\n Choose key length in bits:")
-    print("\n 1 - 1024b\n 2 - 2048b\n 3 - 3072b\n 4 - Return")
+    print("\n 1 - 1024b\n 2 - 2048b\n 3 - 3072b\n\
+ 4 - Return")
 
-    option = input("\n -> Choose option of key length and write as number: ")
+    option = input("\n -> Choose option of key \
+length and write as number: ")
 
     if option == "1":
         generate_RSA(bits=1024)
@@ -236,7 +244,8 @@ def option21(p,q):
     print("\n 2 - Sieve of Eratosthenes")
     print("\n 3 - Brute force algorithm")
 
-    option = input("\n -> Choose algorithm which you prefer to factorize n and write it as number: ")
+    option = input("\n -> Choose algorithm which \
+you prefer to factorize n and write it as number: ")
 
     if option == "1":
         p1 = pollardRho(n)        
@@ -273,17 +282,17 @@ def option21(p,q):
         option21()
         
 def credits():
-    print("\n\n===========================================================================================================")
-    print("\n==================================== Applied Cryptography =================================================")
-    print("\n================================ RSA Communication Breach Tool ============================================")
-    print("\n===========================================================================================================")
-    print("\n\n                                        Tomáš Glos")
-    print("\n                                       Alois Kunert")
-    print("\n                                       Tomáš Závada")
-    print("\n                                        Jakub Volf")
-    print("\n\n===========================================================================================================")
-    print("========================================= 2020/2021 =======================================================")
-    print("===========================================================================================================")
+    print("\n\n", 79*"=")
+    print("\n",28*"="," Applied Cryptography ",27*"=")
+    print("\n",23*"="," RSA Communication Breach Tool ",23*"=")
+    print("\n", 79*"=")
+    print("\n\n",34*" ","Tomáš Glos")
+    print("\n",33*" ","Alois Kunert")
+    print("\n",33*" ","Tomáš Závada")
+    print("\n",34*" ","Jakub Volf")
+    print("\n\n", 79*"=")
+    print("\n",33*"="," 2020/2021 ",33*"=")
+    print("\n",79*"=")
 
     time.sleep(5)
     chooseOption()
@@ -291,13 +300,12 @@ def credits():
 
 if __name__ == '__main__':
     
-    print("\n\n\n\n===========================================================================================================")
-    print("\n================================ RSA Communication Breach Tool ============================================")
-    print("\n===========================================================================================================")
+    print("\n\n\n\n", 79*"=")
+    print("\n", 23*"=", " RSA Communication Breach Tool ", 23*"=")
+    print("\n", 79*"=")
     
     chooseOption()
 
-    print(" ")
-    print("\n===========================================================================================================")
-    print("============================================ END ==========================================================")
-    print("===========================================================================================================")
+    print("\n\n", 79*"=")
+    print("\n",36*"=", " END ", 36*"=")
+    print("\n",79*"=")
