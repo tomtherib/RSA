@@ -14,11 +14,11 @@ Při spuštění aplikace `rsa_decrypt.py` se objeví menu:
 
 4. Exit program  
  
-Volba se provádí zapsáním hodnoty dané možnosti jako celého čísla (např: 2). Jelikož je knihovna Crypto schopna generovat pouze klíče o velikosti 1024b, 2048b a 3072b, bylo by nereálné snažit se takto dlouhý klíč faktorizovat.  
-První možnost tedy využije Crypto knihovnu, vygeneruje a vypíše do konzole oba klíče ve formátu `PEM` i s jednotlivými komponenty. Při zvolení druhé možnosti je nutno uvést požadovanou délku klíče v bitech a při potvrzení se objeví náhodně vygenerované komponenty n, e, p, q. Následně
+Volba se provádí zapsáním hodnoty dané možnosti jako celého čísla (např: 2). Jelikož je knihovna Crypto schopna generovat pouze klíče o velikosti `1024b, 2048b a 3072b`, bylo by nereálné snažit se takto dlouhý klíč faktorizovat.  
+První možnost tedy využije Crypto knihovnu, vygeneruje a vypíše do konzole oba klíče ve formátu `PEM` i s jednotlivými komponenty. Při zvolení druhé možnosti je nutno uvést požadovanou délku klíče v bitech a při potvrzení se objeví náhodně vygenerované komponenty `n, e, p, q`. Následně
 je potřeba vybrat algoritmus pro faktorizaci.  
 1. Pollard's Rho algoritmus
 2. Eratosthenovo síto
 3. Brute force algoritmus  
 
-Pro představu vstupů je nejméněm efektivní je využití Eratosthenova síta a nad 20b již trvá řádově minuty, Brute force trvá přibližně minutu 60b a Pollard's Rho trvá přibližně minutu 100b.
+Pro představu vstupů je nejméněm efektivní je využití Eratosthenova síta a nad `20b` již trvá řádově minuty, Brute force trvá přibližně minutu `60b` a Pollard's Rho trvá přibližně minutu `100b`.
