@@ -1,4 +1,2 @@
-certifi==2020.11.8
 pem==20.1.0
 pycryptodome==3.9.9
-wincertstore==0.2
