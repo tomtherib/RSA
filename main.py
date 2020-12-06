@@ -83,7 +83,7 @@ def isPrime(n, k):
         s += 1
         r //= 2
 
-    for _ in range(k):
+    for u in range(k):
         a = randrange(2, n - 1)
         x = pow(a, r, n)
         if x != 1 and x != n - 1:
@@ -113,12 +113,12 @@ def multipliInverse(e, phi):
     x1 = 0
     x2 = 1
     y1 = 1
-    temp_phi = phi
+    tempPhi = phi
 
     while e > 0:
-        temp1 = temp_phi // e
-        temp2 = temp_phi - temp1 * e
-        temp_phi = e
+        temp1 = tempPhi // e
+        temp2 = tempPhi - temp1 * e
+        tempPhi = e
         e = temp2
 
         x = x2 - temp1 * x1
@@ -129,7 +129,7 @@ def multipliInverse(e, phi):
         d = y1
         y1 = y
 
-    if temp_phi == 1:
+    if tempPhi == 1:
         return d + phi
 
 def generatePrivKey(p, q, e):
