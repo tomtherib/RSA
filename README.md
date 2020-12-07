@@ -18,4 +18,4 @@ je potřeba vybrat algoritmus pro faktorizaci.
 2. Eratosthenovo síto
 3. Brute force algoritmus  
 
-Pro představu vstupů je nejméněm efektivní je využití Eratosthenova síta a nad `20b` již trvá řádově minuty, Brute force trvá přibližně minutu `60b` a Pollard's Rho trvá přibližně minutu `100b`.
+Pro představu vstupů je nejméněm efektivní využití Eratosthenova síta a nad `20b` již trvá řádově minuty, Brute force trvá přibližně minutu `60b` a Pollard's Rho trvá přibližně minutu `100b`.
